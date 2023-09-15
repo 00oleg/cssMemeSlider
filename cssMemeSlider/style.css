@@ -26,6 +26,7 @@ body {
   grid-template-areas: 
     "a a a"
     "b b c";
+  grid-template-columns: 2fr 1fr 1fr;
   padding: 0 5rem;
 }
 
@@ -106,6 +107,7 @@ body {
   opacity: 0.1;
   transition: opacity 2s;
   font-size: 1.5rem;
+  line-height: 2;
 }
 
 .carousel__controls {
@@ -138,4 +140,14 @@ body {
   border: 0.15rem solid rgb(194, 21, 21);
   cursor: pointer;
   background-color: rgb(194, 21, 21);
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    padding: 0 1rem;
+  }
+
+  .carousel__slide-text {
+    font-size: 1rem;
+  }
 }
