@@ -106,18 +106,18 @@ body {
   text-align: left;
   opacity: 0.1;
   transition: opacity 2s;
-  font-size: 1.5rem;
-  line-height: 2;
+  font-size: 1.4rem;
+  line-height: 1.2;
 }
 
 .carousel__controls {
   grid-area: c;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
 }
 
 .carousel__control {
+  display: flex;
   cursor: pointer;
   padding: 0.5rem;
 }
@@ -146,8 +146,22 @@ body {
   .carousel {
     padding: 0 1rem;
   }
+}
 
-  .carousel__slide-text {
-    font-size: 1rem;
+@media (max-width: 500px) {
+  .carousel {
+    grid-template-areas: 
+      "a"
+      "c"
+      "b";
+    grid-template-columns: 1fr;
+  }
+
+  .carousel__controls {
+    justify-content: center;
+  }
+
+  .carousel__texts {
+    margin-top: 1rem;
   }
 }
