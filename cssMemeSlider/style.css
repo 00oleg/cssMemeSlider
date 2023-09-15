@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+  
+html,
+body {
+  margin: 0;
+  color: white;
+  background-color: rgb(116, 116, 116);
+}
+
+.main-header {
+  margin-bottom: 1rem;
+  padding: 2rem 0;
+  color: black;
+  text-align: center;
+  background-color: rgb(56, 56, 56);
+}
+
+.main-footer {
+  margin-top: 2rem;
+}
+
+.carousel {
+  display: grid;
+  grid-template-areas: 
+    "a a a"
+    "b b c";
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 0 5rem;
+}
+
+.carousel__activator {
+  display: none;
+}
+
+.carousel__activator:nth-of-type(1):checked ~ .carousel__texts > .carousel__texts-inner,
+.carousel__activator:nth-of-type(1):checked ~ .carousel__images > .carousel__images-inner {
+  transform: translateX(0%);
+}
+
+.carousel__activator:nth-of-type(2):checked ~ .carousel__texts > .carousel__texts-inner,
+.carousel__activator:nth-of-type(2):checked ~ .carousel__images > .carousel__images-inner {
+  transform: translateX(-100%);
+}
+
+.carousel__activator:nth-of-type(3):checked ~ .carousel__texts > .carousel__texts-inner,
+.carousel__activator:nth-of-type(3):checked ~ .carousel__images > .carousel__images-inner {
+  transform: translateX(-200%);
+}
+
+.carousel__activator:nth-of-type(4):checked ~ .carousel__texts > .carousel__texts-inner,
+.carousel__activator:nth-of-type(4):checked ~ .carousel__images > .carousel__images-inner {
+  transform: translateX(-300%);
+}
+
+.carousel__activator:nth-of-type(1):checked ~ .carousel__images .carousel__slide:nth-of-type(1),
+.carousel__activator:nth-of-type(2):checked ~ .carousel__images .carousel__slide:nth-of-type(2),
+.carousel__activator:nth-of-type(3):checked ~ .carousel__images .carousel__slide:nth-of-type(3),
+.carousel__activator:nth-of-type(4):checked ~ .carousel__images .carousel__slide:nth-of-type(4),
+.carousel__activator:nth-of-type(1):checked ~ .carousel__texts .carousel__slide-text:nth-of-type(1),
+.carousel__activator:nth-of-type(2):checked ~ .carousel__texts .carousel__slide-text:nth-of-type(2),
+.carousel__activator:nth-of-type(3):checked ~ .carousel__texts .carousel__slide-text:nth-of-type(3),
+.carousel__activator:nth-of-type(4):checked ~ .carousel__texts .carousel__slide-text:nth-of-type(4){
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(1):checked ~ .carousel__controls .carousel__control:nth-of-type(1) .carousel__control-inner,
+.carousel__activator:nth-of-type(2):checked ~ .carousel__controls .carousel__control:nth-of-type(2) .carousel__control-inner,
+.carousel__activator:nth-of-type(3):checked ~ .carousel__controls .carousel__control:nth-of-type(3) .carousel__control-inner,
+.carousel__activator:nth-of-type(4):checked ~ .carousel__controls .carousel__control:nth-of-type(4) .carousel__control-inner{
+  background-color: rgb(116, 116, 116);
+}
+
+.carousel__images {
+  grid-area: a;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.carousel__texts-inner,
+.carousel__images-inner {
+  display: flex;
+  transition: transform 1s;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  opacity: 0.1;
+  transition: opacity 2s;
+}
+
+.carousel__slide img {
+  width: 100%;
+  display: block;
+}
+
+.carousel__texts {
+  grid-area: b;
+  overflow: hidden;
+}
+
+.carousel__slide-text {
+  min-width: 100%;
+  margin: 0;
+  text-align: left;
+  opacity: 0.1;
+  transition: opacity 2s;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.carousel__controls {
+  grid-area: c;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.carousel__control {
+  display: flex;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.carousel__control:hover .carousel__control-inner {
+  background-color: rgb(235, 76, 76);
+  border-color: rgb(235, 76, 76);
+}
+
+.carousel__control:active .carousel__control-inner {
+  background-color: rgb(239, 156, 24);
+  border-color: rgb(239, 156, 24);
+}
+
+.carousel__control-inner {
+  display: block;
+  border-radius: 100%;
+  height: 1rem;
+  width: 1rem;
+  border: 0.15rem solid rgb(194, 21, 21);
+  cursor: pointer;
+  background-color: rgb(194, 21, 21);
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel {
+    grid-template-areas: 
+      "a"
+      "c"
+      "b";
+    grid-template-columns: 1fr;
+  }
+
+  .carousel__controls {
+    justify-content: center;
+  }
+
+  .carousel__texts {
+    margin-top: 1rem;
+  }
+}

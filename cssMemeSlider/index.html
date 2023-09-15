@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cssMemeSlider</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+      header
+    </header>
+    <main>
+      <div class="carousel">
+        <input class="carousel__activator" type="radio" id="slide-1" name="activator" checked>
+        <input class="carousel__activator" type="radio" id="slide-2" name="activator">
+        <input class="carousel__activator" type="radio" id="slide-3" name="activator">
+        <input class="carousel__activator" type="radio" id="slide-4" name="activator">
+
+        <div class="carousel__images">
+          <div class="carousel__images-inner">
+            <div class="carousel__slide">
+              <img src="images/meme-1.jpg" />
+            </div>
+            <div class="carousel__slide">
+              <img src="images/meme-2.jpg" />
+            </div>
+            <div class="carousel__slide">
+              <img src="images/meme-3.jpg" />
+            </div>
+            <div class="carousel__slide">
+              <img src="images/meme-4.jpg" />
+            </div>
+          </div>
+        </div> 
+
+        <div class="carousel__texts">
+          <div class="carousel__texts-inner">
+            <p class="carousel__slide-text">
+              Enough for today!
+            </p>
+            <p class="carousel__slide-text">
+              Me and deadlines!
+            </p>
+            <p class="carousel__slide-text">
+              Syntax error
+            </p>
+            <p class="carousel__slide-text">
+              IT team before going on Holiday
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel__controls">
+          <label class="carousel__control" for="slide-1"><span class="carousel__control-inner"></span></label>
+          <label class="carousel__control" for="slide-2"><span class="carousel__control-inner"></span></label>
+          <label class="carousel__control" for="slide-3"><span class="carousel__control-inner"></span></label>
+          <label class="carousel__control" for="slide-4"><span class="carousel__control-inner"></span></label>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer"></footer>
+</body>
+</html>
